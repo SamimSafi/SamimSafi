@@ -34,10 +34,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 var mysqlConnection = mysql.createConnection({
-  host: process.env.DB_HOST, 
-  user: process.env.DB_USERNAME, 
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DBNAME,
+  host: "bgfzcpxyuojgpjnbc5jx-mysql.services.clever-cloud.com", 
+  user: "ulil3tts0ed8gjrf", 
+  password: "ILQp3NDWfbBec0b5R8Yc",
+  database: "bgfzcpxyuojgpjnbc5jx",
 });
 
 // ============ Services Endpoint Apis =======================
