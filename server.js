@@ -34,12 +34,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 var mysqlConnection = mysql.createConnection({
-  host: "localhost",
-  // user: "elaminte_elaminte_content",
-  // password: "h-&].emHSeQU",
-  user: "root",
-  password: "password",
-  database: "elaminte_content",
+  host: process.env.DB_HOST, 
+  user: process.env.DB_USERNAME, 
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DBNAME,
 });
 
 // ============ Services Endpoint Apis =======================
@@ -896,6 +894,6 @@ app.post("/footer", (req, res) => {
   );
 });
 
-app.listen(8081, () => {
+app.listen(process.env.PORT || 8081, () => {
   console.log("listening");
 });
